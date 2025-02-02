@@ -21,7 +21,7 @@ if isLocalPlayerWhitelisted then
         Duration = 7,
     })
     -- 在这里添加你的脚本不是源码
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/MP00N/MP/refs/heads/main/2MPi.lua"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/MP00N/MP/refs/heads/main/MP.lua"))()
 else
     localPlayer:Kick("你没有被加入白名单请加群主(3674042966)反馈")
 end

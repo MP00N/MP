@@ -254,7 +254,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EclipseHub/Eclipse/ma
         end
     })
 
-e
+
 
 --[[
 -- 1. 切换开关(Toggle)示例

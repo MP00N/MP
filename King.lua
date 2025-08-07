@@ -111,6 +111,8 @@ local Window = Rayfield:CreateWindow({
 local Tab1 = Window:CreateTab("关于我们")
 local Tab2 = Window:CreateTab("通用")
 local Tab3 = Window:CreateTab("国外脚本")
+local Tab4 = Window:CreateTab("极速传奇")
+
 
 local ParagraphExample = Tab1:CreateParagraph({
     Title = "作者信息",
@@ -213,6 +215,46 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EclipseHub/Eclipse/ma
         print("按钮被点击了!")
     end,
 })
+
+  local ToggleExample = Tab4:CreateToggle({
+        Name = "自动刷球",
+        CurrentValue = false,
+        Flag = "ToggleExample",
+        Callback = function(Value)  -- 直接使用参数值
+            if Value then
+                spawn(function()
+                    while Value do wait()
+                        local children = workspace.Hoops:GetChildren()
+                        for _, child in ipairs(children) do
+                            if child.Name == "Hoop" then
+                                child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                            end
+                        end
+                    end
+                end)
+            end
+        end
+    })
+
+    -- 改进后的自动经验Toggle
+    local ToggleExample = Tab4:CreateToggle({
+        Name = "自动经验",
+        CurrentValue = false,
+        Flag = "ToggleExample",
+        Callback = function(Value)
+            if Value then
+                spawn(function()
+                    while Value do wait()
+                        for i = 1, 50 do  -- 使用循环替代重复代码
+                            game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City")
+                        end
+                    end
+                end)
+            end
+        end
+    })
+
+e
 
 --[[
 -- 1. 切换开关(Toggle)示例

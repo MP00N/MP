@@ -1,4 +1,9 @@
---by 神青
+
+if MP == "作者QQ3674042966" then
+    print("验证通过，允许操作")
+
+if MP_YYDS == "主群1026414406" then
+    print("验证通过，允许操作")
 
 repeat wait() until game:IsLoaded()
 
@@ -363,3 +368,18 @@ submitButton.MouseButton1Click:Connect(function()
         game.Players.LocalPlayer:Kick("卡密无效")
     end
 end)
+
+else
+    -- 踢出逻辑（如关闭游戏或终止脚本）
+    game:GetService("Players").LocalPlayer:Kick("无权访问！")
+    -- 或终止脚本
+    error("权限不足")
+end
+
+
+else
+    -- 踢出逻辑（如关闭游戏或终止脚本）
+    game:GetService("Players").LocalPlayer:Kick("无权访问！")
+    -- 或终止脚本
+    error("权限不足")
+end

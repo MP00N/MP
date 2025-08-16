@@ -1,0 +1,3442 @@
+if MP == "作者QQ3674042966" and 
+   MP_YYDS == "主群1026414406" then
+   print("如果你在控制台看到这句话，说明你已经度过了验证阶段")
+    -- 验证通过
+else
+    -- 验证失败
+    game:GetService("Players").LocalPlayer:Kick("验证失败")
+end
+--[[
+你自己不会做，手呢
+我干啥了🤣🤣🤣
+4000+了吧
+你居然敢解源码？
+你要是泛滥了sm
+二改4000+
+😂😂😂
+]]
+local tx = false
+_G.lE = false
+local gl = false
+AutoXZ = false
+_G.SavedPosition = nil
+_G.fillColor = Color3.fromRGB(0, 255, 0)
+_G.transparency = 0.4
+print("你看见我的时候说我全局变量已经好了")
+print("需要再等待一段时间就可以了，看见初始化成功就行")
+
+        local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/dist/main.lua"))()
+               print("初始化成功")
+        -- 设置主题:
+        -- WindUI:SetTheme("Blue")
+
+        -- 渐变文字函数
+        local function gradient(text, startColor, endColor)
+            local result = ""
+            local length = #text
+
+            for i = 1, length do
+                local t = (i - 1) / math.max(length - 1, 1)
+                local r = math.floor((startColor.R + (endColor.R - startColor.R) * t) * 255)
+                local g = math.floor((startColor.G + (endColor.G - startColor.G) * t) * 255)
+                local b = math.floor((startColor.B + (endColor.B - startColor.B) * t) * 255)
+
+                local char = text:sub(i, i)
+                result = result .. "<font color=\"rgb(" .. r ..", " .. g .. ", " .. b .. ")\">" .. char .. "</font>"
+            end
+
+            return result
+        end
+
+        local Confirmed = false
+
+        -- 弹出窗口示例
+        WindUI:Popup({
+            Title = "欢迎使用，封号与本脚本无关",
+            Icon = "rbxassetid://129260712070622",
+            IconThemed = true, -- true
+            Content = "这是在" .. gradient("WindUI", Color3.fromHex("#00FF87"), Color3.fromHex("#60EFFF")) .. "的基础制作的",
+            Buttons = {
+                {
+                    Title = "取消",
+                    Callback = function() end,
+                    Variant = "Secondary", -- 主按钮、次按钮、第三按钮
+                },
+                {
+                    Title = "继续",
+                    Icon = "arrow-right",
+                    Callback = function() Confirmed = true end,
+                    Variant = "Primary",
+                }
+            }
+        })
+
+        repeat wait() until Confirmed
+
+        -- 创建主窗口
+        local Window = WindUI:CreateWindow({
+            Title = "MP中心",
+            Icon = "rbxassetid://129260712070622",
+            IconThemed = true,
+            Author = "QQ群：1026414406",
+            Folder = "CloudHub",
+            Size = UDim2.fromOffset(580, 460),
+            Transparent = true,
+            Theme = "Light",
+            Background = "rbxassetid://98446137628032",
+            User = {
+                Enabled = true, -- 是否显示用户信息
+                Callback = function() print("点击了") end,
+                Anonymous = false -- 匿名模式
+            },
+            SideBarWidth = 200, -- 侧边栏宽度
+            ScrollBarEnabled = true, -- 启用滚动条
+            
+            -- 密钥系统配置
+            KeySystem = {
+                Key = { "1234", "5678" },
+                Note = "密钥系统。\n\n密钥填'1234'或'5678'",
+                URL = "link-to-linkvertise-or-discord-or-idk",
+                SaveKey = true, -- 保存密钥
+            },
+        })
+
+Window:Tag({
+    Title = "v0.1.3",
+    Color = Color3.fromHex("#30ff6a")
+})
+Window:Tag({
+    Title = "Beta版",
+    Color = Color3.fromHex("#315dff")
+})
+local TimeTag = Window:Tag({
+    Title = "00:00",
+    Color = Color3.fromHex("#000000")
+})
+
+-- 动态时间标签
+local hue = 0
+task.spawn(function()
+    while true do
+        local now = os.date("*t")
+        local hours = string.format("%02d", now.hour)
+        local minutes = string.format("%02d", now.min)
+        
+        hue = (hue + 0.01) % 1
+        local color = Color3.fromHSV(hue, 1, 1)
+        
+        TimeTag:SetTitle(hours .. ":" .. minutes)
+        TimeTag:SetColor(color)
+
+        task.wait(0.06)
+    end
+end)
+
+        -- 创建标签页
+        local Tabs = {
+            st1 = Window:Section({
+                Title = "主要的",
+                Opened = true,
+            }),
+            st2 = Window:Section({
+                Title = "游戏脚本",
+                Opened = true,
+            })
+        }
+
+        -- 创建类1的标签页
+        Tabs.Tab1 = Tabs.st1:Tab({ Title = "关于我们", Icon = "type" })
+        Tabs.Tab2 = Tabs.st1:Tab({ Title = "通用", Icon = "mouse-pointer-2" })
+        Tabs.Tab3 = Tabs.st1:Tab({ Title = "脚本中心", Icon = "mouse-pointer-2" })
+        Tabs.Tab4 = Tabs.st1:Tab({ Title = "甩飞", Icon = "mouse-pointer-2" })
+        -- 类2
+        Tabs.JS = Tabs.st2:Tab({ Title = "极速传奇", Icon = "mouse-pointer-2" })
+        Tabs.JB = Tabs.st2:Tab({ Title = "99夜", Icon = "mouse-pointer-2" })
+        Tabs.ZZ = Tabs.st2:Tab({ Title = "战争大享", Icon = "mouse-pointer-2" })
+        Tabs.doors = Tabs.st2:Tab({ Title = "doors", Icon = "mouse-pointer-2" })
+
+
+print("初始化成功")
+        -- 添加内容到标签页1
+        Tabs.Tab1:Paragraph({
+            Title = "QQ群",
+            Desc = "1026414406",
+            Image = "https://play-lh.googleusercontent.com/7cIIPlWm4m7AGqVpEsIfyL-HW4cQla4ucXnfalMft1TMIYQIlf2vqgmthlZgbNAQoaQ",
+            ImageSize = 42,
+            Thumbnail = "rbxassetid://130923340937036",
+            ThumbnailSize = 120
+        })
+
+        Tabs.Tab1:Button({
+            Title = "公告",
+            Callback = function()
+                Window:Dialog({
+                    Title = "云公告",
+                    Content = "发生任何的封号(或600)事件\n与MP中心无关！\n禁止骂脚本及制作人员\n永远免费！\n最新更新：\n战争大亨增加功能，更新doors栏\n\n倒卖4000+\n官方QQ群认准1026414406",
+                    Icon = "bird",
+                    Buttons = {
+                        {
+                            Title = "确定",
+                            Variant = "Primary",
+                            Callback = function() print("确定") end,
+                        }
+                    }
+                })
+            end,
+        })
+
+        Tabs.Tab2:Slider({
+            Title = "速度",
+            Value = {
+                Min = 16,
+                Max = 200,
+                Default = 16,
+            },
+            Callback = function(sd)
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = sd
+                print("速度: " .. sd) 
+            end
+        })
+
+        Tabs.Tab2:Slider({
+            Title = "跳跃",
+            Value = {
+                Min = 7,
+                Max = 200,
+                Default = 7,
+            },
+            Callback = function(ty)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = ty
+                print("跳跃: " .. ty)
+            end
+        })
+
+        Tabs.Tab2:Button({
+            Title = "飞行V3",
+            Desc = "丝滑飞行",
+            Callback = function() 
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/MP00N/function2/refs/heads/main/fly"))()
+                print("按钮被点击!")
+            end
+        })
+
+        Tabs.Tab2:Button({
+            Title = "键盘",
+            Desc = "伪电脑",
+            Callback = function() 
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+                print("按钮被点击!")
+            end
+        })
+
+        Tabs.Tab2:Button({
+            Title = "无限跳跃",
+            Desc = "边走边飞",
+            Callback = function() 
+                loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
+                print("按钮被点击!") 
+            end
+        })
+
+        Tabs.Tab2:Button({
+            Title = "马上死亡",
+            Desc = "不知道",
+            Callback = function() 
+                print("按钮被点击!") 
+                game:GetService("Players").PlayerAdded:Connect(function(p) 
+                    p.CharacterAdded:Connect(function(c) 
+                        c:WaitForChild("Humanoid").Died:Connect(function() 
+                            print(p.Name.." 你死了👁👄👁️") 
+                        end) 
+                    end) 
+                end)
+            end
+        })
+
+        Tabs.Tab2:Toggle({
+    Title = "无敌(无法关闭可能不适配)",
+    Value = false,
+    Callback = function(state) 
+        print("功能启用状态: " .. tostring(state))
+        local invincible = state
+        loadstring(game:HttpGet('https://pastebin.com/raw/H3RLCWWZ'))()
+    end
+})
+
+        -- 外部示例（保持简洁）
+Tabs.Tab2:Toggle({
+    Title = "显示玩家背包",
+    Value = false,
+    Callback = function(state)
+        -- 内部完整实现（已测试通过）
+        local Players = game:GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
+        local playerDisplays = {}
+        
+        -- 安全获取背包物品文本
+        local function getBackpackText(player)
+            local backpack = player:FindFirstChildOfClass("Backpack")
+            if not backpack then return "（无背包）" end
+            
+            local items = {}
+            for _, item in ipairs(backpack:GetChildren()) do
+                if item:IsA("Tool") then
+                    table.insert(items, "• "..item.Name)
+                end
+            end
+            return #items > 0 and table.concat(items, "\n") or "（空背包）"
+        end
+        
+        -- 创建玩家头顶显示
+        local function createDisplay(player)
+            -- 防止重复创建
+            if playerDisplays[player] then return end
+            
+            -- 等待角色加载
+            if not player.Character then
+                player.CharacterAdded:Wait()
+            end
+            
+            -- 创建显示GUI
+            local billboard = Instance.new("BillboardGui")
+            billboard.Name = "BackpackDisplay"
+            billboard.Size = UDim2.new(4, 0, 4, 0)
+            billboard.StudsOffset = Vector3.new(0, 3.5, 0)
+            billboard.AlwaysOnTop = true
+            billboard.Adornee = player.Character:WaitForChild("Head")
+            billboard.Parent = player.Character.Head
+            
+            -- 背景框
+            local frame = Instance.new("Frame")
+            frame.Size = UDim2.new(1, 0, 1, 0)
+            frame.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
+            frame.BackgroundTransparency = 0.3
+            frame.BorderSizePixel = 0
+            frame.Parent = billboard
+            
+            -- 玩家名称标签
+            local nameLabel = Instance.new("TextLabel")
+            nameLabel.Text = player.Name
+            nameLabel.Size = UDim2.new(1, 0, 0.2, 0)
+            nameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+            nameLabel.Font = Enum.Font.SourceSansBold
+            nameLabel.TextSize = 18
+            nameLabel.BackgroundTransparency = 1
+            nameLabel.Parent = frame
+            
+            -- 物品显示标签
+            local itemsLabel = Instance.new("TextLabel")
+            itemsLabel.Size = UDim2.new(1, -10, 0.8, -5)
+            itemsLabel.Position = UDim2.new(0, 5, 0.2, 5)
+            itemsLabel.TextColor3 = Color3.fromRGB(220, 220, 220)
+            itemsLabel.TextXAlignment = Enum.TextXAlignment.Left
+            itemsLabel.TextYAlignment = Enum.TextYAlignment.Top
+            itemsLabel.Text = getBackpackText(player)
+            itemsLabel.Font = Enum.Font.SourceSans
+            itemsLabel.TextSize = 16
+            itemsLabel.BackgroundTransparency = 1
+            itemsLabel.Parent = frame
+            
+            -- 存储引用
+            playerDisplays[player] = {
+                gui = billboard,
+                itemsLabel = itemsLabel
+            }
+            
+            -- 监听背包变化
+            local backpack = player:FindFirstChildOfClass("Backpack")
+            if backpack then
+                backpack.ChildAdded:Connect(function()
+                    itemsLabel.Text = getBackpackText(player)
+                end)
+                backpack.ChildRemoved:Connect(function()
+                    itemsLabel.Text = getBackpackText(player)
+                end)
+            end
+        end
+        
+        -- 清除所有显示
+        local function clearDisplays()
+            for _, data in pairs(playerDisplays) do
+                data.gui:Destroy()
+            end
+            playerDisplays = {}
+        end
+        
+        -- 初始化所有玩家
+        local function initAllPlayers()
+            for _, player in ipairs(Players:GetPlayers()) do
+                if player ~= LocalPlayer then
+                    coroutine.wrap(function()
+                        createDisplay(player)
+                    end)()
+                end
+            end
+        end
+        
+        -- 玩家加入处理
+        local function onPlayerAdded(player)
+            if player ~= LocalPlayer and next(playerDisplays) ~= nil then
+                coroutine.wrap(function()
+                    createDisplay(player)
+                end)()
+            end
+        end
+        
+        -- 玩家离开处理
+        local function onPlayerRemoving(player)
+            if playerDisplays[player] then
+                playerDisplays[player].gui:Destroy()
+                playerDisplays[player] = nil
+            end
+        end
+        
+        -- 状态切换
+        if state then
+            initAllPlayers()
+            Players.PlayerAdded:Connect(onPlayerAdded)
+            Players.PlayerRemoving:Connect(onPlayerRemoving)
+            WindUI:Notify({
+            Title = "通知",
+            Content = "✅背包显示已开启",
+            Duration = 5,
+        })
+            
+        else
+            clearDisplays()
+            WindUI:Notify({
+            Title = "通知",
+            Content = "❌背包显示已关闭",
+            Duration = 5,
+        })
+            
+        end
+    end
+})
+
+        Tabs.Tab3:Button({
+            Title = "导管中心",
+            Desc = "非常多的脚本，大多数人的选择",
+            Callback = function() 
+                print("按钮被点击!")
+                loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\117\115\101\114\97\110\101\119\114\102\102\47\114\111\98\108\111\120\45\47\109\97\105\110\47\37\69\54\37\57\68\37\65\49\37\69\54\37\65\67\37\66\69\37\69\53\37\56\68\37\56\70\37\69\56\37\65\69\37\65\69\34\41\41\40\41\10")()
+            end
+        })
+
+        Tabs.Tab3:Button({
+            Title = "脚本中心",
+            Desc = "脚本少量，但似乎已经停止更新",
+            Callback = function() 
+                print("按钮被点击!")
+                loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\101\109\120\72\119\65\49"))()
+            end
+        })
+
+        Tabs.Tab3:Button({
+            Title = "xa",
+            Desc = "免费好用，ui有点丑",
+            Callback = function() 
+                print("按钮被点击!") 
+                loadstring(game:HttpGet("https://raw.gitcode.com/Xingtaiduan/Scripts/raw/main/Loader.lua"))()
+            end
+        })
+
+        Tabs.Tab3:Button({
+            Title = "静新",
+            Desc = "我忘了",
+            Callback = function() 
+                print("按钮被点击!") 
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/jxdjbx/Ghfjfhfjejjfbdbdbefbbd/main/Xgvvdhnxcv%20vbbvbb%20mnknbHB"))()  
+            end
+        })
+
+
+Tabs.JS:Toggle({
+    Title = "刷经验",
+    Value = false,
+    Callback = function(state) print("功能启用状态: " .. tostring(state)) 
+    if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") 
+           end
+        else
+           _G.loop = false
+        end
+    end
+})
+
+Tabs.JS:Toggle({
+    Title = "自动重生",
+    Value = false,
+    Callback = function(state) print("功能启用状态: " .. tostring(state))
+    if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer("rebirthRequest")
+           end
+        else
+           _G.loop = false
+        end
+      end
+})
+
+Tabs.JS:Toggle({
+    Title = "自动卡宠",
+    Value = false,
+    Callback = function(state) print("功能启用状态: " .. tostring(state)) 
+    _G.Evolve = (state and true or false)
+	wait()
+	while _G.Evolve == true do
+		wait()
+		game.Replicatedstorage.rEvents.petEvolveEvent:FireServer("evolvePet", "all")
+		end
+    end
+})
+Tabs.JS:Toggle({
+    Title = "自动球体",
+    Value = false,
+    Callback = function(state) print("功能启用状态: " .. tostring(state)) 
+    if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 local children = workspace.Hoops:GetChildren()
+                    for i, child in ipairs(children) do
+                    if child.Name == "Hoop" then
+                          child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                   end
+                end
+        end
+        else
+           _G.loop = false
+        end
+    end
+})
+
+
+Tabs.JS:Button({
+    Title = "刷速度",
+    Desc = "刷速度",
+    Callback = function()
+        local code = [[
+            local args = {"collectOrb", "Red Orb", "City"}
+            while true do
+                game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+                task.wait(0.0001)
+            end
+        ]]
+        loadstring(code)()
+    end
+})
+
+Tabs.JS:Button({
+    Title = "刷钻石",
+    Desc = "刷",
+    Callback = function()
+        local code = [[
+            local args = {"collectOrb","Gem","City"}
+            while true do
+                game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+                task.wait(0.0003)
+            end
+        ]]
+        loadstring(code)()
+    end
+})
+
+
+Tabs.JS:Button({
+    Title = "传送到城市",
+    Desc = "传送到主城区",
+    Callback = function()
+        pcall(function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 
+                CFrame.new(2002.0133056640625, 1.2624330520629883, 985.2265625)
+        end)
+    end
+})
+
+Tabs.JS:Button({
+    Title = "传送到雪城",
+    Desc = "传送到冰雪区域",
+    Callback = function()
+        pcall(function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 
+                CFrame.new(-9675.25, 59.63568115234375, 3783.50146484375)
+        end)
+    end
+})
+
+Tabs.JS:Button({
+    Title = "传送到火山",
+    Desc = "传送到火山区域",
+    Callback = function()
+        pcall(function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 
+                CFrame.new(-11052.4189453125, 217.59571838378906, 4898.76416015625)
+        end)
+    end
+})
+
+Tabs.JS:Button({
+    Title = "传送到公路",
+    Desc = "传送到高速公路",
+    Callback = function()
+        pcall(function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 
+                CFrame.new(-13095.255859375, 217.59567260742188, 5905.240234375)
+        end)
+    end
+})
+
+Tabs.JS:Input({
+    Title = "修改经验值",
+    Placeholder = "输入经验值",
+    Callback = function(arg)
+        pcall(function()
+            game:GetService("Players").LocalPlayer.exp.Value = tonumber(arg) or 0
+            WindUI:Notify({Title = "修改成功", Content = "经验值已设置为: "..arg})
+        end)
+    end
+})
+
+Tabs.JS:Input({
+    Title = "修改等级",
+    Placeholder = "输入等级",
+    Callback = function(arg)
+        pcall(function()
+            game:GetService("Players").LocalPlayer.level.Value = tonumber(arg) or 1
+            WindUI:Notify({Title = "修改成功", Content = "等级已设置为: "..arg})
+        end)
+    end
+})
+
+Tabs.JS:Input({
+    Title = "修改比赛数",
+    Placeholder = "输入比赛数",
+    Callback = function(arg)
+        pcall(function()
+            game:GetService("Players").LocalPlayer.leaderstats.Races.Value = tonumber(arg) or 0
+            WindUI:Notify({Title = "修改成功", Content = "比赛数已设置为: "..arg})
+        end)
+    end
+})
+
+Tabs.JS:Input({
+    Title = "修改圈数",
+    Placeholder = "输入圈数",
+    Callback = function(arg)
+        pcall(function()
+            game:GetService("Players").LocalPlayer.leaderstats.Hoops.Value = tonumber(arg) or 0
+            WindUI:Notify({Title = "修改成功", Content = "圈数已设置为: "..arg})
+        end)
+    end
+})
+
+Tabs.JS:Input({
+    Title = "修改重生次数",
+    Placeholder = "输入重生次数",
+    Callback = function(arg)
+        pcall(function()
+            game:GetService("Players").LocalPlayer.leaderstats.Rebirths.Value = tonumber(arg) or 0
+            WindUI:Notify({Title = "修改成功", Content = "重生次数已设置为: "..arg})
+        end)
+    end
+})
+
+Tabs.JS:Input({
+    Title = "修改步数",
+    Placeholder = "输入步数",
+    Callback = function(arg)
+        pcall(function()
+            game:GetService("Players").LocalPlayer.leaderstats.Steps.Value = tonumber(arg) or 0
+            WindUI:Notify({Title = "修改成功", Content = "步数已设置为: "..arg})
+        end)
+    end
+})
+
+Tabs.JS:Input({
+    Title = "修改尾迹容量",
+    Placeholder = "输入容量",
+    Callback = function(arg)
+        pcall(function()
+            game:GetService("Players").LocalPlayer.maxPetCapacity.Value = tonumber(arg) or 0
+            WindUI:Notify({Title = "修改成功", Content = "尾迹容量已设置为: "..arg})
+        end)
+    end
+})
+
+Tabs.JS:Input({
+    Title = "修改宝石数量",
+    Placeholder = "输入宝石数量",
+    Callback = function(arg)
+        pcall(function()
+            game:GetService("Players").LocalPlayer.Gems.Value = tonumber(arg) or 0
+            WindUI:Notify({Title = "修改成功", Content = "宝石数量已设置为: "..arg})
+        end)
+    end
+})
+
+Tabs.JB:Input({
+    Title = "修改天数",
+    Placeholder = "输入几天",
+    Callback = function(arg)
+        pcall(function()
+            game:GetService("Players").LocalPlayer.leaderstats["Max Days"].Value = tonumber(arg) or 0
+            WindUI:Notify({Title = "修改成功", Content = "天数已设置为: "..arg})
+        end)
+    end
+})
+
+Tabs.JB:Button({
+    Title = "保存当前位置",
+    Icon = "bookmark",
+    Callback = function()
+        -- 获取玩家当前位置并保存到全局变量
+        _G.SavedPosition = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+        WindUI:Notify({
+            Title = "位置已保存",
+            Content = "当前位置已保存到全局变量",
+            Icon = "bookmark",
+            Duration = 3
+        })
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到保存位置",
+    Icon = "rocket",
+    Callback = function()
+        if _G.SavedPosition then
+            -- 传送到保存的位置
+            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = _G.SavedPosition
+            WindUI:Notify({
+                Title = "传送成功",
+                Content = "已传送到保存的位置",
+                Icon = "rocket",
+                Duration = 3
+            })
+        else
+            WindUI:Notify({
+                Title = "错误",
+                Content = "没有保存的位置",
+                Icon = "error",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视兔子脚",
+    Desc = "高亮显示所有兔子脚",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Bunny Foot"  -- 要透视的物品名称
+            local highlightColor = Color3.fromRGB(0, 255, 0)  -- 绿色高亮
+            local fillTransparency = 0.4  -- 透明度
+
+            -- 创建新透视
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            -- 立即扫描全图
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            -- 监听新生成的物品
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)  -- 等待模型加载
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            -- 关闭透视时只移除当前物品的高亮
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Bunny Foot" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            -- 断开连接
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示兔子脚",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视胡萝卜",
+    Desc = "高亮显示所有胡萝卜",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Carrot"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Carrot" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示胡萝卜",
+                Duration = 3
+            })
+        end
+    end
+})
+
+-- 透视坏风扇
+Tabs.JB:Toggle({
+    Title = "透视坏风扇",
+    Desc = "高亮显示所有坏风扇",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Broken Fan"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Broken Fan" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示坏风扇",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视煤",
+    Desc = "高亮显示所有煤",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Coal"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Coal" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示煤",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视坏物品箱",
+    Desc = "高亮显示所有物品箱",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Item Chest"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Item Chest" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示物品箱",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视坏燃料罐",
+    Desc = "高亮显示所有坏燃料罐",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Fuel Canister"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Fuel Canister" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示燃料罐",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视坏熟肉",
+    Desc = "高亮显示所有熟肉块",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Cooked Morsel"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Cooked Morsel" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示坏熟肉",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视轮胎",
+    Desc = "高亮显示所有轮胎",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Tyre"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Tyre" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示轮胎",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视金属板",
+    Desc = "高亮显示所有金属板",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Sheet Metal"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Sheet Metal" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示金属板",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视步枪弹药",
+    Desc = "高亮显示所有步枪弹药",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Rifle Ammo"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Rifle Ammo" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示步枪弹药",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视坏左轮手枪弹药",
+    Desc = "高亮显示所有左轮手枪弹药",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Revolver Ammo"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Revolver Ammo" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示左轮手枪弹药",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视旧收音机",
+    Desc = "高亮显示所有旧收音机",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Old Radio"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Old Radio" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示旧收音机",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视狼",
+    Desc = "高亮显示所有狼",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Wolf"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Wolf" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示狼",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视兔子",
+    Desc = "高亮显示所有兔子",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Bunny"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Bunny" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示兔子",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视螺栓",
+    Desc = "高亮显示所有螺栓",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Bolt"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Bolt" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示螺栓",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视浆果",
+    Desc = "高亮显示所有浆果",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Berry"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Berry" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示浆果",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视旧手电筒",
+    Desc = "高亮显示所有旧手电筒",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Old Flashlight"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Old Flashlight" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示旧手电筒",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视原木",
+    Desc = "高亮显示所有原木",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Log"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Log" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示原木",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视椅子",
+    Desc = "高亮显示所有椅子",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Chair"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Chair" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示椅子",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视步枪",
+    Desc = "高亮显示所有步枪",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Rifle"
+            local highlightColor = Color3.fromRGB(0, 255, 0)
+            local fillTransparency = 0.4
+
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示步枪",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视左轮手枪",
+    Desc = "高亮显示所有左轮手枪",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Revolver"  -- 要透视的物品名称
+            local highlightColor = Color3.fromRGB(0, 255, 0)  -- 绿色高亮
+            local fillTransparency = 0.4  -- 透明度
+
+            -- 创建新透视
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            -- 立即扫描全图
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            -- 监听新生成的物品
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)  -- 等待模型加载
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            -- 关闭透视时只移除当前物品的高亮
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Revolver" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            -- 断开连接
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示左轮手枪",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视绷带",
+    Desc = "高亮显示所有绷带",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Bandage"  -- 要透视的物品名称
+            local highlightColor = Color3.fromRGB(0, 255, 0)  -- 绿色高亮
+            local fillTransparency = 0.4  -- 透明度
+
+            -- 创建新透视
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            -- 立即扫描全图
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            -- 监听新生成的物品
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)  -- 等待模型加载
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            -- 关闭透视时只移除当前物品的高亮
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Revolver" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            -- 断开连接
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示绷带",
+                Duration = 3
+            })
+        end
+    end
+})
+
+Tabs.JB:Toggle({
+    Title = "透视阿尔法狼",
+    Desc = "高亮显示所有阿尔法狼",
+    Callback = function(state)
+        if state then
+            -- 开启透视
+            local targetItemName = "Alpha Wolf"  -- 要透视的物品名称
+            local highlightColor = Color3.fromRGB(0, 255, 0)  -- 绿色高亮
+            local fillTransparency = 0.4  -- 透明度
+
+            -- 创建新透视
+            local function createESP(item)
+                if item.Name == targetItemName and not item:FindFirstChild("ESP_Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP_Highlight"
+                    highlight.Adornee = item
+                    highlight.FillColor = highlightColor
+                    highlight.FillTransparency = fillTransparency
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlight.Parent = item
+                end
+            end
+
+            -- 立即扫描全图
+            for _, item in pairs(workspace:GetDescendants()) do
+                createESP(item)
+            end
+
+            -- 监听新生成的物品
+            _G.ESPConnection = workspace.DescendantAdded:Connect(function(item)
+                task.wait(0.1)  -- 等待模型加载
+                createESP(item)
+            end)
+
+            WindUI:Notify({
+                Title = "透视已激活",
+                Content = "正在高亮显示所有 "..targetItemName,
+                Duration = 3
+            })
+        else
+            -- 关闭透视时只移除当前物品的高亮
+            for _, item in pairs(workspace:GetDescendants()) do
+                if item.Name == "Alpha Wolf" and item:FindFirstChild("ESP_Highlight") then
+                    item.ESP_Highlight:Destroy()
+                end
+            end
+
+            -- 断开连接
+            if _G.ESPConnection then
+                _G.ESPConnection:Disconnect()
+                _G.ESPConnection = nil
+            end
+
+            WindUI:Notify({
+                Title = "透视已关闭",
+                Content = "已停止高亮显示绷带",
+                Duration = 3
+            })
+        end
+    end
+})
+
+
+Tabs.JB:Button({
+    Title = "传送到胡萝卜",
+    Desc = "直接传送到最近的胡萝卜旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Carrot"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Colorpicker({
+    Title = "填充颜色",
+    Default = Color3.fromRGB(0, 255, 0),
+    Callback = function(color)
+        fillColor = color
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item:FindFirstChild("ESP_Highlight") then
+                item.ESP_Highlight.FillColor = color
+            end
+        end
+    end
+})
+
+Tabs.JB:Slider({
+    Title = "透明度",
+    Default = 0.4,
+    Callback = function(value)
+        transparency = value
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item:FindFirstChild("ESP_Highlight") then
+                item.ESP_Highlight.FillTransparency = value
+            end
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "关闭所有透视",
+    Desc = "清除所有高亮效果",
+    Callback = function()
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item:FindFirstChild("ESP_Highlight") then
+                item.ESP_Highlight:Destroy()
+            end
+        end
+        if _G.ESPConnection then
+            _G.ESPConnection:Disconnect()
+            _G.ESPConnection = nil
+        end
+        WindUI:Notify({
+            Title = "透视已关闭",
+            Content = "所有高亮效果已清除",
+            Duration = 3
+        })
+    end
+})
+
+
+Tabs.JB:Button({
+    Title = "传送胡萝卜",
+    Desc = "直接传送到最近的煤胡旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Coal"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到物品箱",
+    Desc = "直接传送到最近的物品箱旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Item Chest"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到燃料罐",
+    Desc = "直接传送到最近的燃料罐旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Fuel Canister"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到熟肉块",
+    Desc = "直接传送到最近的熟肉块旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Cooked Morsel"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到轮胎",
+    Desc = "直接传送到最近的轮胎旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Tyre"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到金属板",
+    Desc = "直接传送到最近的金属板旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Sheet Metal"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到步枪弹药",
+    Desc = "直接传送到最近的步枪弹药旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Rifle Ammo"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到左轮手枪弹药",
+    Desc = "直接传送到最近的左轮手枪弹药旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Revolver Ammo"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+
+Tabs.JB:Button({
+    Title = "传送到旧收音机",
+    Desc = "直接传送到最近的旧收音机旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Old Radio"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到狼",
+    Desc = "直接传送到最近的狼旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Wolf"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到兔子",
+    Desc = "直接传送到最近的兔子旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Bunny"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到螺栓",
+    Desc = "直接传送到最近的螺栓旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Bolt"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到浆果",
+    Desc = "直接传送到最近的浆果旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Berry"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到手电筒",
+    Desc = "直接传送到最近的手电筒旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Old Flashlight"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到原木",
+    Desc = "直接传送到最近的原木旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Log"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到椅子",
+    Desc = "直接传送到最近的椅子旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Chair"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到左轮手枪",
+    Desc = "直接传送到最近的左轮手枪旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Revolver"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到步枪",
+    Desc = "直接传送到最近的步枪旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Rifle"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到绷带",
+    Desc = "直接传送到最近的绷带旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Bandage"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到步枪",
+    Desc = "直接传送到最近的步枪旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Rifle"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+Tabs.JB:Button({
+    Title = "传送到沃尔法狼",
+    Desc = "直接传送到最近的沃尔法狼旁边",
+    Callback = function()
+        -- 要传送的目标物品名称（可修改为其他物品如"Tree"、"Wolf"等）
+        local targetName = "Alpha Wolf"
+
+        -- 获取玩家角色和HRP
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then
+            return -- 静默失败，不显示错误
+        end
+
+        local hrp = character.HumanoidRootPart
+        local closestItem = nil
+        local minDistance = math.huge -- 初始设为极大值
+
+        -- 优化搜索：只搜索包含BasePart的模型
+        for _, item in pairs(workspace:GetDescendants()) do
+            if item.Name == targetName then
+                -- 如果是模型，找它的主部件
+                local primaryPart = item:IsA("Model") and item.PrimaryPart or item
+
+                -- 确保有有效的BasePart
+                if primaryPart and primaryPart:IsA("BasePart") then
+                    local distance = (primaryPart.Position - hrp.Position).Magnitude
+                    if distance < minDistance then
+                        closestItem = primaryPart
+                        minDistance = distance
+                    end
+                end
+            end
+        end
+
+        -- 如果找到目标物品，进行传送
+        if closestItem then
+            -- 计算传送位置（物品上方3个单位，并面向物品）
+            local offset = Vector3.new(0, 3, 0)
+            hrp.CFrame = CFrame.new(closestItem.Position + offset, closestItem.Position)
+        end
+    end
+})
+
+
+local modeDropdown = Tabs.ZZ:Dropdown({
+    Title = "基地传送",
+    Values = { "Alpha","Bravo","Charlie","Delta","Echo", "Foxtrot", "Golf","Hotel","Kilo", "Lima", "Omega", "Romeo","Sierra","Tango","Victor","Zulu" },
+    Value = "Alpha",
+    Callback = function(option)
+        WindUI:Notify({
+            Title = "通知",
+            Content = "已传送至: "..option,
+            Duration = 2
+        })
+        game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Tycoon.TycoonFloor[option].Position)
+    end
+})
+
+Tabs.ZZ:Button({
+    Title = "超大范围",
+    Icon = "bell",
+    Callback = function()
+        _G.HeadSize = 150
+_G.Disabled = true
+game:GetService('RunService').RenderStepped:connect(function()
+    if _G.Disabled then
+        for i, v in next, game:GetService('Players'):GetPlayers() do
+            if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+                pcall(function()
+                    v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize, _G.HeadSize, _G.HeadSize)
+                    v.Character.HumanoidRootPart.Transparency = 0.7
+                    v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+                    v.Character.HumanoidRootPart.Material = "Neon"
+                    v.Character.HumanoidRootPart.CanCollide = false
+                end)
+            end
+        end
+    end
+end)
+    end
+})
+
+Tabs.ZZ:Button({
+    Title = "全图范围",
+    Icon = "bell",
+    Callback = function()
+        _G.HeadSize = 1500000
+_G.Disabled = true
+game:GetService('RunService').RenderStepped:connect(function()
+    if _G.Disabled then
+        for i, v in next, game:GetService('Players'):GetPlayers() do
+            if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+                pcall(function()
+                    v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize, _G.HeadSize, _G.HeadSize)
+                    v.Character.HumanoidRootPart.Transparency = 0.7
+                    v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+                    v.Character.HumanoidRootPart.Material = "Neon"
+                    v.Character.HumanoidRootPart.CanCollide = false
+                end)
+            end
+        end
+    end
+end)
+    end
+})
+
+local featureToggle = Tabs.ZZ:Toggle({
+    Title = "自动偷箱",
+    Desc = "别人神不知鬼不觉零件就没了",
+    Value = false,
+    Callback = function(t) 
+        tx = t
+        WindUI:Notify({
+            Title = "功能",
+            Content = t and "功能已启用" or "功能已禁用",
+            Icon = t and "check" or "x",
+            Duration = 2
+        })
+        AutoXZ = t
+      local TweenService = game:GetService("TweenService")
+      local Players = game:GetService("Players")
+      local LocalPlayer = Players.LocalPlayer
+      local Crate = workspace["Game Systems"]["Crate Workspace"]
+      local Oil = workspace.Tycoon.Tycoons[LocalPlayer.Team.Name].Essentials["Oil Collector"]
+      local Tween = TweenService:Create(LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(), {
+        CFrame = Oil:WaitForChild("CratePromptPart").CFrame
+      })
+      while AutoXZ and task.wait() do
+        for _, v in Crate:GetChildren() do
+          if not AutoXZ then
+            break
+          end
+          local StealPrompt = v:WaitForChild("StealPrompt")
+          if _G.StealPrompt.Enabled then
+            StealPrompt.MaxActivationDistance = 10
+            LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+            StealPrompt.PromptShown:Wait()
+            task.wait(1)
+            StealPrompt:InputHoldBegin()
+            StealPrompt.Triggered:Wait()
+            Tween:Play()
+            Oil:WaitForChild("CratePromptPart"):WaitForChild("SellPrompt").PromptShown:Wait()
+            task.wait(1)
+            fireproximityprompt(Oil:WaitForChild("CratePromptPart"):WaitForChild("SellPrompt"))
+          end
+        end
+      end
+    end
+})
+
+local featureToggle = Tabs.ZZ:Toggle({
+    Title = "自动偷箱ai改",
+    Desc = "别人神不知鬼不觉零件就没了",
+    Value = false,
+    Callback = function(t) 
+        -- 状态管理
+        AutoXZ = t
+        WindUI:Notify({
+            Title = "功能",
+            Content = t and "功能已启用" or "功能已禁用",
+            Icon = t and "check" or "x",
+            Duration = 2
+        })
+
+        -- 安全终止前一个循环
+        if not t then return end
+
+        -- 服务初始化
+        local TweenService = game:GetService("TweenService")
+        local Players = game:GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
+
+        -- 异步执行防止卡顿
+        task.spawn(function()
+            -- 游戏对象安全获取
+            local function GetSafeObject(path, timeout)
+                local obj
+                local start = os.time()
+                repeat
+                    obj = path:FindFirstChild("CratePromptPart") or path
+                    task.wait(0.1)
+                until obj or (os.time() - start) > (timeout or 5)
+                return obj
+            end
+
+            local Crate = workspace:WaitForChild("Game Systems"):WaitForChild("Crate Workspace", 5)
+            local Oil = workspace:WaitForChild("Tycoon"):WaitForChild("Tycoons")[LocalPlayer.Team.Name].Essentials
+            local OilPart = GetSafeObject(Oil:WaitForChild("Oil Collector"), 3)
+
+            if not Crate or not OilPart then
+                WindUI:Notify({ Title = "错误", Content = "关键游戏对象加载失败", Duration = 5 })
+                return
+            end
+
+            -- 缓动动画预创建
+            local Tween = TweenService:Create(
+                LocalPlayer.Character:WaitForChild("HumanoidRootPart"),
+                TweenInfo.new(1, Enum.EasingStyle.Linear),
+                { CFrame = OilPart.CFrame }
+            )
+
+            -- 主循环
+            while AutoXZ and task.wait(0.1) do  -- 添加延迟防止卡死
+                local character = LocalPlayer.Character
+                if not character or not character:FindFirstChild("HumanoidRootPart") then
+                    task.wait(1)  -- 等待角色加载
+                    continue
+                end
+
+                for _, v in ipairs(Crate:GetChildren()) do
+                    if not AutoXZ then break end
+
+                    local StealPrompt = v:FindFirstChild("StealPrompt")
+                    if StealPrompt and StealPrompt.Enabled then
+                        -- 设置交互距离
+                        StealPrompt.MaxActivationDistance = 50
+
+                        -- 传送并触发交互
+                        local hrp = character.HumanoidRootPart
+                        hrp.CFrame = v.CFrame * CFrame.new(0, 3, 0)  -- 保持一定高度
+
+                        -- 分步交互
+                        if StealPrompt:GetAttribute("LastTriggered") ~= os.time() then
+                            fireproximityprompt(StealPrompt)
+                            StealPrompt:SetAttribute("LastTriggered", os.time())
+                            
+                            -- 等待并出售
+                            task.wait(0.5)
+                            Tween:Play()
+                            local SellPrompt = OilPart:FindFirstChild("SellPrompt")
+                            if SellPrompt then
+                                fireproximityprompt(SellPrompt)
+                            end
+                        end
+                    end
+                end
+            end
+        end)
+    end
+})
+
+--[[local doors = Tabs.doors:Toggle({
+    Title = "通知",
+    Desc = "其实就是刷怪呀",
+    Value = false,
+    Callback = function(s) 
+    gi = s
+    WindUI:Notify({
+    Title = "通知",
+            Content = state and "功能已启用" or "功能已禁用",
+            Icon = s and "check" or "x",
+            Duration = 2
+        })
+    end
+        _G.lE = (s and true or false)
+    LatestRoom.Changed:Connect(function()
+        if _G.lE == true then
+            local n = ChaseStart.Value - LatestRoom.Value
+            if 0 < n and n < 4 then
+                Notification:Notify(
+    {Title = "请注意", Description = "事件可能刷新于" .. tostring(n) .. " 房间"},
+    {OutlineColor = Color3.fromRGB(98, 37, 209),Time = 5, Type = "default"}
+)
+            end
+        end
+end)
+
+workspace.ChildAdded:Connect(function(inst)
+if inst.Name == "RushMoving" and _G.IE == true then
+Notification:Notify(
+    {Title = "请注意", Description = "Rush 已刷新"},
+    {OutlineColor = Color3.fromRGB(98, 37, 209),Time = 5, Type = "default"}
+)
+
+elseif inst.Name == "AmbushMoving" and _G.IE == true then
+Notification:Notify(
+    {Title = "请注意", Description = "Ambush 已刷新"},
+    {OutlineColor = Color3.fromRGB(98, 37, 209),Time = 5, Type = "default"}
+)
+
+end
+end)
+end
+})
+]]
+-- 主功能类
+Tabs.doors:Button({
+    Title = "[控制] 键盘控制",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+        WindUI:Notify({ Title = "系统提示", Content = "键盘控制脚本已加载", Duration = 2 })
+    end
+})
+
+Tabs.doors:Button({
+    Title = "[移动] 穿墙模式(按R)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/sharksharksharkshark/cuddly-chains/main/hi.txt", true))()
+        WindUI:Notify({ Title = "系统提示", Content = "穿墙功能已激活 (按R键)", Duration = 2 })
+    end
+})
+
+-- 物品生成类
+Tabs.doors:Button({
+    Title = "[物品] 臭猫玩偶",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/K0t1n/Public/main/Maxwell%20Plushie"))()
+        WindUI:Notify({ Title = "物品生成", Content = "臭猫玩偶已添加到背包", Duration = 2 })
+    end
+})
+
+Tabs.doors:Button({
+    Title = "[武器] AK47步枪",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Mye123/Roblox-Scripts/master/AK-47.lua"))()
+        WindUI:Notify({ Title = "武器生成", Content = "AK47已装备", Duration = 2 })
+    end
+})
+
+-- 特殊功能类
+Tabs.doors:Button({
+    Title = "[特效] 时空裂缝",
+    Callback = function()
+        loadstring(game:HttpGet('https://pastebin.com/raw/bucRxAMi'))()
+        WindUI:Notify({ Title = "地图特效", Content = "时空裂缝已生成", Duration = 2 })
+    end
+})
+
+Tabs.doors:Button({
+    Title = "[挑战] 不可能模式",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Ukazix/impossible-mode/main/Protected_79.lua.txt'))()
+        WindUI:Notify({ Title = "模式变更", Content = "不可能难度已激活", Duration = 2 })
+    end
+})
+
+-- 完整功能列表（继续添加剩余按钮）
+Tabs.doors:Button({
+    Title = "[娱乐] 把Seek变成鸡",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/iimateiYT/Scripts/main/Chicken%20Mod.lua", true))()
+        WindUI:Notify({ Title = "娱乐模式", Content = "Seek已变成鸡", Duration = 2 })
+    end
+})
+
+Tabs.doors:Button({
+    Title = "[实用] 无限手电筒",
+    Callback = function()
+        loadstring(game:HttpGet('https://pastebin.com/raw/9Daqa4hD'))()
+        WindUI:Notify({ Title = "工具升级", Content = "手电筒无限电量", Duration = 2 })
+    end
+})
+--[[Tabs.doors:Button({
+    Title = "示例",
+    Icon = "bell",
+    Callback = function()
+        WindUI:Notify({
+            Title = "你好 WindUI!",
+            Content = "这是一个示例通知",
+            Icon = "bell",
+            Duration = 3
+        })
+    end
+})
+]]
+
+--[[
+local gl = false
+local doors = Tabs.doors:Toggle({
+    Title = "启用高级功能",
+    Desc = "解锁额外功能",
+    Value = false,
+    Callback = function(state) 
+        gi = state
+        WindUI:Notify({
+            Title = "功能状态",
+            Content = state and "功能已启用" or "功能已禁用",
+            Icon = state and "check" or "x",
+            Duration = 2
+        })
+    end
+})
+]]
